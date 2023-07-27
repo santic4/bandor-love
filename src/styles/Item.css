@@ -1,0 +1,27 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .card-content {
+    text-align: left;
+  }
+  
+  .card-content h3 {
+    font-size: 18px;
+    margin: 0 0 10px;
+  }
+  
+  .card-content p {
+    margin: 0 0 5px;
+  }
