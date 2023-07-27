@@ -1,16 +1,23 @@
 import React from "react";
-import '../styles/ItemListContainer.css';
+import ItemCount from './ItemCount';
 
+const ItemDetail = ({producto}) => {
 
-const ItemDetail = (producto) => {
+    const onAdd = (cantidad) =>{
+        console.log(`Compraste ${cantidad} productos`)
+      }
+    
     return (
         <div>
-            <h3>Detalle de: {producto.nombre}</h3>
-            <img src={producto.img} alt={producto.nombre}/>
-            <p>{producto.nombre}</p>
-            
+           <h3>detalle de {producto.nombre} </h3>
+           <img src={producto.imagen} alt={producto.imagen} />
+           <p>{producto.marca}</p>
+           <p>{producto.precio}</p>
+           <ItemCount initial={1} stock={producto.stock} onAdd={onAdd}/>
+           
         </div>
+        
     )
 }
-console.log (producto)
-export default ItemDetail
+
+export default ItemDetail;
