@@ -1,32 +1,54 @@
-import React, {useState} from 'react';
+import React, { useState, useContext } from 'react';
 import ItemCount from './ItemCount';
 import '../styles/ItemDetail.css';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { CartContext } from '../context/cartContext';
 
+const ItemDetail = ({ producto }) => {
+  const [quantityAdded, setQuantityAdded] = useState(0);
+  const { addItem } = useContext(CartContext);
 
-const ItemDetail = ({producto}) => {
+  const handleOnAdd = (quantity) => {
+    setQuantityAdded(quantity);
 
-    const [quantityAdded, SetQuantityAdded] = useState(0);
+    const item = {
+      id: producto.id,
+      nombre: producto.nombre,
+      precio: producto.precio,
+      marca: producto.marca,
+      codigo: producto.codigo,
+      stock: producto.stock,
+      imagen: producto.imagen
+    };
+    addItem(item, quantity);
+  };
 
-    const handleOnAdd = (quantity) => {
-        SetQuantityAdded (quantity)
-    }
+  return (
+    <section>
 
-  
-    return (
-        <div className="ItemDetail">
-           <h3>Estas viendo: {producto.nombre} </h3>
-           <img src={producto.imagen} alt={producto.imagen} />
-           <p>{producto.marca}</p>
-           <p>{producto.precio}</p>
-           {quantityAdded > 0 ? (
-            <Link to='./cart' > Terminar Compra</Link>
-           ) :  <ItemCount initial={1} stock={producto.stock} onAdd={handleOnAdd}/> }
-          
-           
-        </div>
-        
-    )
+      <div className='tituloCarrito'>
+       <h3>Estas viendo: {producto.nombre} </h3>
+      </div>
+
+    <div className="ItemDetail">
+      <img src={producto.imagen} alt={producto.nombre} />
+      <h2>$ {producto.precio}</h2>
+      <h6>{producto.marca}</h6>
+      <p>Categoria: {producto.categoria}</p>
+      <p>COD: {producto.codigo}</p>
+      <p>Stock: {producto.stock}</p>
+    </div>
+
+    <div className='contador'>
+    {quantityAdded > 0 ? (
+        <Link to='/cart' className='finish'>Terminar Compra</Link>
+      ) : (
+        <ItemCount initial={1} stock={producto.stock} onAdd={handleOnAdd} />
+      )}
+    </div>
+
+    </section>
+  );
 }
 
 export default ItemDetail;

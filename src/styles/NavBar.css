@@ -1,19 +1,13 @@
 .navbar {
-  background-color: #f2f2f2;
-  padding: 20px;
+  background-color: #080a37e6;
+ 
 }
 
 .navbar-n {
   display: flex;
   list-style: none;
-  margin-top: 50px;
+  margin-top: 40px;
   margin-left: -180px;
-  margin-bottom: 10px;
-  
-}
-
-h1{
-  margin-left: 50px;
 }
 
 .a{
@@ -22,12 +16,12 @@ h1{
 
 .nav-link {
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
   padding: 5px;
 }
 
 .nav-link:hover {
-  color: #000;
+  color: #858585;
 }
 
 .nav-item {
@@ -35,4 +29,10 @@ h1{
   display: inline-block; 
   padding: 0; 
   margin-right: 30px;
+  color: rgb(255, 255, 255);
+}
+
+.logo{
+  height: 100%;
+ 
 }

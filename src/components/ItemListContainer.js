@@ -1,39 +1,58 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/ItemListContainer.css';
 import ItemList from "./ItemList";
-import { getProducts } from "../mock/data"
 import { useParams } from 'react-router-dom';
-
-
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'; // Importa collection y getDocs
 
 const ItemListContainer = ({ greeting }) => {
 
- const [productos, setProductos] = useState([])
+  const [productos, setProductos] = useState([]);
 
- const {categoriaId} = useParams()
+  const { categoriaId } = useParams();
 
-  useEffect(()=>{
-    
-   getProducts()
-   .then((res)=> {
-   if(categoriaId){
-    setProductos(res.filter((item)=> item.categoria === categoriaId))
-   }else{
-    setProductos(res)
-   }
-  })
-   .catch((error)=> console.log(error))
-  },[categoriaId])
+  useEffect(() => {
+
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, 'Items');
+
+    if(categoriaId) {
+      const queryFilter = query(queryCollection, where('categoria', '==', categoriaId))
+
+      getDocs(queryFilter)
+        .then((products) => {
+          const productsData = products.docs.map((product) => ({
+            id: product.id,
+            ...product.data(),
+          }));
+  
+          setProductos(productsData); // Actualiza el estado con los datos obtenidos
+        })
+    }else {
+      
+      getDocs(queryCollection)
+      .then((products) => {
+        const productsData = products.docs.map((product) => ({
+          id: product.id,
+          ...product.data(),
+        }));
+
+        setProductos(productsData); // Actualiza el estado con los datos obtenidos
+      })
+    }
+  }, [categoriaId]);
 
   return (
-    <div className="greeting">
+    <section>
+      <div className='h1Titular'>
+        <h2>
+          {greeting} <span>{categoriaId && categoriaId}</span>
+        </h2>
+      </div>
 
-      <h2>{greeting} <span>{categoriaId && categoriaId}</span></h2>
-
-      <ItemList productos={productos}/>
-
-      
-    </div>
+      <div className="greeting">
+        <ItemList productos={productos} />
+      </div>
+    </section>
   );
 };
 

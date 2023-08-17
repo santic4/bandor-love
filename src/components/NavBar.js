@@ -10,7 +10,9 @@ const NavBar = () => {
   return (
     <nav className="navbar">
 
-      <h1 style={{ color: 'black', textAlign: 'center' }}>Bandor LOVE</h1>
+      <div className="logo">
+        <img src="../img/logorecortado.jpg" alt="Logo" className='logo'/>
+      </div>
 
       <ul className="navbar-n" >
         

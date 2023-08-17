@@ -1,3 +1,12 @@
 .greeting{
     text-align: center;
+    margin: 100px;
+}
+
+.h1Titular{ 
+    margin: 50px 0;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding-bottom: 50px;
 }
