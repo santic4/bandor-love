@@ -1,6 +1,6 @@
 .cart-widget {
     margin-right: 70px;
-    background-color: #ff6600;
+    background-color: #FF6341;
     color: white;
     border: 1px solid rgba(0, 0, 0, 0.624);
     border-radius: 5px;
@@ -15,13 +15,15 @@
 
 .cart-widget svg {
     margin-top: 4px;
+    color: white;
     transform: translateY(-3px);
 }
 
 .notification {
     padding: 3px 6px 3px 6px;
-    background-color: red;
+    background-color: white;
     border-radius: 50%;
     font-size: 14px;
     margin-left: 12px;
 }
+

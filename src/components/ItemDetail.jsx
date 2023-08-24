@@ -41,7 +41,10 @@ const ItemDetail = ({ producto }) => {
 
       <div className='contador'>
         {quantityAdded > 0 ? (
+          <section className='btns'>
+          <Link to='/' className='finish btnSeguir'>Seguir Comprando</Link>
           <Link to='/cart' className='finish'>Ir al carrito</Link>
+          </section>
         ) : (
           <ItemCount initial={1} stock={producto.stock} onAdd={handleOnAdd} />
         )}

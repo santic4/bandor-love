@@ -68,3 +68,18 @@ section {
   background-color: #cc5500;
 }
 
+.btns{
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  gap: 20px;
+  
+}
+
+.btnSeguir{
+  background-color: #0daa34;
+}
+
+.btnSeguir:hover {
+  background-color: #00c400;
+}

@@ -9,19 +9,33 @@ const ItemListContainer = ({ greeting }) => {
   const { productos } = useGetProducts('Items');
   const { categoriaId } = useParams();
  
+  const showImage = !categoriaId || categoriaId === 'inicio';
 
   return (
-    <section>
+    <>
       <div className='h1Titular'>
-        <h2>
+        {showImage ? (
+          <div className="image-container">
+            <img src='../img/ads.png' alt='Ads' />
+          </div>
+        ) : (
+          <div className="banner-container">
+            <img src='../img/banner.png' alt='Other Image' />
+          </div>
+        )}
+        <p className='divCategory'>
+          <h2>
           {greeting} <span>{categoriaId && categoriaId}</span>
         </h2>
+        </p>
       </div>
 
       <div className="greeting">
-       <ItemList productos={productos} />
+        <ItemList productos={productos} />
       </div>
-    </section>
+
+     
+    </>
   );
 };
 

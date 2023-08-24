@@ -7,13 +7,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { CartProvider } from './context/cartContext';
 import Checkout from './components/Checkout'
-import CartWidget from './components/CartWidget';
+import PiePagina from './components/piePagina'
 
 function App() {
   return (
     <BrowserRouter>
       <CartProvider>
         <NavBar />
+        
         <Routes>
           <Route path="/" element={<ItemListContainer greeting="¡Hola, bienvenido a Bandor LOVE!" />} />
           <Route path="/categoria/:categoriaId" element={<ItemListContainer greeting="CATEGORIA:" />} />
@@ -22,7 +23,9 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="*" element={<h1>404 NOT FOUND</h1>} />
         </Routes>
+        <PiePagina />
       </CartProvider>
+      
     </BrowserRouter>
   );
 }

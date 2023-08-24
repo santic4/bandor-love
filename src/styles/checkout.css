@@ -9,6 +9,8 @@
   justify-content:space-around;
   flex-direction: row;
   gap: 20%;
+  min-height: 80vh;
+  margin: 0 auto 50px auto;
   }
 
   
@@ -156,8 +158,6 @@
     background-color: #555555;
   }
 
-  //COMPROBANTE
-
   .comprobante-card {
     background-color: #f8f8f8;
     border: 1px solid #ccc;
@@ -170,8 +170,8 @@
     align-items: center;
     text-align: center;
     margin: 0 auto;
-    margin-top: 100px; /* Ajusta este valor para centrar verticalmente */
-    width: 300px; /* Ajusta el ancho de la tarjeta según tus necesidades */
+    margin-top: 100px; 
+    width: 300px;
   }
   
   .comprobante-title {
@@ -190,9 +190,9 @@
     align-items: center;
     text-align: center;
     margin: 0 auto;
-    margin-top: 100px; /* Ajusta este valor para centrar verticalmente */
-    width: 300px; /* Ajusta el ancho de la tarjeta según tus necesidades */
-    margin-top: 20px; /* Ajusta este valor para separar el título del contenido */
+    margin-top: 100px; 
+    width: 300px; 
+    margin-top: 20px;
   }
   
   .comprobante-info p {

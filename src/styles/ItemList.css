@@ -1,8 +1,9 @@
 .padreCards{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    
-
+    margin: 0 80px;
+    gap: 25px;
+   
 }
