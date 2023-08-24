@@ -16,7 +16,7 @@ const ItemListContainer = ({ greeting }) => {
       <div className='h1Titular'>
         {showImage ? (
           <div className="image-container">
-            <img src='../img/ads.png' alt='Ads' />
+            <img src='../img/ads.png' alt='Anuncio' />
           </div>
         ) : (
           <div className="banner-container">

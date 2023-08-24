@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';  // Asegúrate de importar useState aquí
+import { useEffect, useState } from 'react';  // Asegúrate de importar useState aquí
 import { useParams } from 'react-router-dom';  // Importa useParams desde react-router-dom
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 

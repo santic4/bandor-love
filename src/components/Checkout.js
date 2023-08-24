@@ -1,10 +1,6 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import '../styles/checkout.css';
 import { CartContext } from '../context/cartContext';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-
 
 function Checkout() {
   const { cart, total, addBuyer } = useContext(CartContext);
