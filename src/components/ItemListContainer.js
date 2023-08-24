@@ -20,7 +20,7 @@ const ItemListContainer = ({ greeting }) => {
           </div>
         ) : (
           <div className="banner-container">
-            <img src='../img/banner.png' alt='Other Image' />
+            <img src='../img/banner.png' alt='Otro-anuncio' />
           </div>
         )}
         <p className='divCategory'>
