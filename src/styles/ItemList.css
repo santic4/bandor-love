@@ -7,3 +7,17 @@
     gap: 25px;
    
 }
+
+@media screen and (max-width:780px) {
+    .padreCards{
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width:595px){
+    .padreCards{
+        justify-content: space-around;
+        margin: 0 10px;
+      }
+
+  }

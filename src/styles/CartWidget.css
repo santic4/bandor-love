@@ -27,3 +27,11 @@
     margin-left: 12px;
 }
 
+@media screen and (max-width: 1130px){
+    .cart-widget{
+        margin-right: 10px;
+        height: 30px;
+        width: 80px;
+    }
+}
+
